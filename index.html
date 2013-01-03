@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.folding-fan {
+	position: fixed;
+	bottom : 0px;
+	left: 50%;
+	width: 0px;
+	height: 0px;
+}
+
+.folding {
+	position : absolute;
+	top : -100px;
+	left : -100px;
+	background-color : #FF6400;
+	border:2px solid #BF6830;
+	width : 200px;
+	height: 200px;
+	border-radius : 50%;
+}
+
+.fan-holder {
+	position : absolute;
+	top : 50%;
+	left : 50%;
+	width : 0px;
+	height : 0px;
+}
+
+.fan {
+	position : absolute;
+	top : -100px;
+	left : -30px;
+	border-left : 30px solid transparent;
+	border-right : 30px solid transparent;
+	border-top: 100px  solid #A64100;
+	border-top-left-radius : 60px;
+	border-top-right-radius : 60px;
+}
+
+.fan .icon {
+	position : absolute;
+	left : -10px;
+	top	: -90px;
+	width: 20px;
+	height: 20px;
+	background-color: #00A383;
+	border-radius : 50%;
+}
+
+.fan .icon:hover {
+	cursor : pointer;
+	background-color : #006A55;
+}
+
+.folding-fan .folding-fan-ctrl {
+	position: absolute;
+	z-index : 1;
+	top : -40px;
+	left : -25px;
+	width: 50px;
+	height: 50px;
+	background-color: #FF6400;
+	border-radius : 50%;
+}
+
+.folding-fan-ctrl .folding-fan-ctrl-inner {
+	position: absolute;
+	top : 12px;
+	left : 13px;
+	width: 50%;
+	height: 50%;
+	background-color: #A64100;
+	box-shadow: 0px 0px 2px white;
+	border-radius : 50%;
+}
+
+.folding-fan-ctrl-inner span {
+	margin-left : 5.5px;
+	font-size : 22px;
+	line-height : 26px;
+	font-family : arial;
+	color : white;
+	text-shadow: 1px 2px #333;
+	-webkit-user-select: none;
+	
+}
+
+.folding-fan-ctrl:hover {
+	cursor : pointer;
+}
+
+.angle-r1 {
+	-webkit-transform : rotate(34deg);
+}
+
+.angle-r2 {
+	-webkit-transform : rotate(68deg);
+}
+
+.angle-l1 {
+	-webkit-transform : rotate(-34deg);
+}
+
+.angle-l2 {
+	-webkit-transform : rotate(-68deg);
+}
+
+.folding-fan > input[type=checkbox] {
+	visibility : hidden;
+}
+
+.folding-fan > input[type=checkbox] + .folding {
+	display : none;
+}
+
+.folding-fan > input[type=checkbox]:checked + .folding {
+	display : block;
+	-webkit-animation : unfold 0.1s;
+}
+
+@-webkit-keyframes unfold {
+	from {
+		top : 0px;
+	}
+	
+	to {
+		top : -100px;
+	}
+}
+
+.folding-fan > input[type=checkbox]:checked + .folding .icon {
+	-webkit-animation : icon-slide 0.17s;
+}
+
+@-webkit-keyframes icon-slide {
+	from {
+		top : 0px;
+	}
+	
+	to {
+		top : -95px;
+	}
+}
+
+</style>
+</head>
+<body>
+<div class="folding-fan">
+	<label for="folding-fan">
+		<div class="folding-fan-ctrl">
+			<div class="folding-fan-ctrl-inner">
+				<span>+</span>
+			</div>
+		</div>
+	</label>
+	<input type="checkbox" id="folding-fan"/><div class="folding">
+		<div class="fan-holder angle-l1">
+			<div class="fan">
+				<div class="icon"></div>
+			</div>
+		</div>
+		<div class="fan-holder angle-l2">
+			<div class="fan">
+				<div class="icon"></div>
+			</div>
+		</div>
+		<div class="fan-holder">
+			<div class="fan">
+				<div class="icon"></div>
+			</div>
+		</div>
+		<div class="fan-holder angle-r1">
+			<div class="fan">
+				<div class="icon"></div>
+			</div>
+		</div>
+		<div class="fan-holder angle-r2">
+			<div class="fan">
+				<div class="icon"></div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
