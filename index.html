@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="user-scalable=no, width=device-width" />
 <style>
-
+/*
+	position to bottom center of window
+*/
 .folding-fan {
 	position: fixed;
 	bottom : 0px;
@@ -12,13 +15,18 @@
 }
 
 .folding {
+	/* position to center*/
 	position : absolute;
-	top : -100px;
+	top : -100px; 
 	left : -100px;
+
+
 	background-color : #FF6400;
 	border:2px solid #BF6830;
 	width : 200px;
 	height: 200px;
+
+	/* draw circle */
 	border-radius : 50%;
 }
 
@@ -58,8 +66,7 @@
 
 .folding-fan .folding-fan-ctrl {
 	position: absolute;
-	z-index : 1;
-	top : -40px;
+	top : -50px;
 	left : -25px;
 	width: 50px;
 	height: 50px;
@@ -68,9 +75,7 @@
 }
 
 .folding-fan-ctrl .folding-fan-ctrl-inner {
-	position: absolute;
-	top : 12px;
-	left : 13px;
+	margin: 25% auto 0px auto;
 	width: 50%;
 	height: 50%;
 	background-color: #A64100;
@@ -78,19 +83,30 @@
 	border-radius : 50%;
 }
 
-.folding-fan-ctrl-inner span {
-	margin-left : 5.5px;
+.folding-fan-ctrl-inner {
+	text-align: center;
 	font-size : 22px;
 	line-height : 26px;
 	font-family : arial;
 	color : white;
 	text-shadow: 1px 2px #333;
 	-webkit-user-select: none;
-	
+}
+
+.folding-fan-ctrl-wrap .folding-fan-ctrl-inner {
+	line-height : 23px;
 }
 
 .folding-fan-ctrl:hover {
 	cursor : pointer;
+}
+
+.folding-fan-ctrl-wrap {
+	position: fixed;
+	bottom : 0px;
+	left: 50%;
+	width: 0px;
+	height: 0px;
 }
 
 .angle-r1 {
@@ -119,7 +135,7 @@
 
 .folding-fan > input[type=checkbox]:checked + .folding {
 	display : block;
-	-webkit-animation : unfold 0.1s;
+	-webkit-animation : unfold 0.05s;
 }
 
 @-webkit-keyframes unfold {
@@ -133,7 +149,7 @@
 }
 
 .folding-fan > input[type=checkbox]:checked + .folding .icon {
-	-webkit-animation : icon-slide 0.17s;
+	-webkit-animation : icon-slide 0.13s;
 }
 
 @-webkit-keyframes icon-slide {
@@ -151,11 +167,7 @@
 <body>
 <div class="folding-fan">
 	<label for="folding-fan">
-		<div class="folding-fan-ctrl">
-			<div class="folding-fan-ctrl-inner">
-				<span>+</span>
-			</div>
-		</div>
+		<div class="folding-fan-ctrl"><div class="folding-fan-ctrl-inner">+</div></div>
 	</label>
 	<input type="checkbox" id="folding-fan"/><div class="folding">
 		<div class="fan-holder angle-l1">
@@ -182,6 +194,11 @@
 			<div class="fan">
 				<div class="icon"></div>
 			</div>
+		</div>
+		<div class="folding-fan-ctrl-wrap">
+			<label for="folding-fan">
+				<div class="folding-fan-ctrl"><div class="folding-fan-ctrl-inner">-</div></div>
+			</label>
 		</div>
 	</div>
 </div>
