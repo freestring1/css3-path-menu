@@ -7,12 +7,53 @@
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
   <body>
+
+<div class="path-fan">
+	<label>
+		<input type="checkbox" /><div class="folding-fan-ctrl">
+			<div class="folding-fan-ctrl-inner">+</div>
+			<div class="icon-wrap p-angle1"><div class="icon">-</div></div>
+			<div class="icon-wrap p-angle2"><div class="icon">-</div></div>
+			<div class="icon-wrap p-angle3"><div class="icon">-</div></div>
+			<div class="icon-wrap p-angle4"><div class="icon">-</div></div>
+			<div class="icon-wrap p-angle5"><div class="icon">-</div></div>
+		</div>
+	</label>
+</div>
+<script >
+
+//
+// to solve a iphone click delay
+//
+var input = document.querySelector("input")
+	, timerId
+;
+
+document.querySelector("label").addEventListener("touchstart", function(e) {
+
+	e.preventDefault();
+
+	if(timerId) {
+		clearTimeout(timerId);
+	}
+
+	setTimeout(function() {
+		input.checked = !input.checked;
+	}, 0);
+
+}, false);
+
+</script>
+
+
     <div class="wrapper">
       <header>
         <h1>css3-path-menu</h1>
@@ -41,6 +82,5 @@
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
-    
   </body>
 </html>
