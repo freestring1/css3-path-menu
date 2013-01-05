@@ -10,44 +10,8 @@ MIT Licensed
 <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
-<div class="folding-fan">
-	<label for="folding-fan">
-		<div class="folding-fan-ctrl"><div class="folding-fan-ctrl-inner">+</div></div>
-	</label>
-	<input type="checkbox" id="folding-fan"/><div class="folding">
-		<div class="fan-holder angle-l1">
-			<div class="fan">
-				<div class="icon"></div>
-			</div>
-		</div>
-		<div class="fan-holder angle-l2">
-			<div class="fan">
-				<div class="icon"></div>
-			</div>
-		</div>
-		<div class="fan-holder">
-			<div class="fan">
-				<div class="icon"></div>
-			</div>
-		</div>
-		<div class="fan-holder angle-r1">
-			<div class="fan">
-				<div class="icon"></div>
-			</div>
-		</div>
-		<div class="fan-holder angle-r2">
-			<div class="fan">
-				<div class="icon"></div>
-			</div>
-		</div>
-		<div class="folding-fan-ctrl-wrap">
-			<label for="folding-fan">
-				<div class="folding-fan-ctrl"><div class="folding-fan-ctrl-inner">-</div></div>
-			</label>
-		</div>
-	</div>
-</div>
-
+	<h4>Webkit only</h4>
+	
 <div class="path-fan">
 	<label>
 		<input type="checkbox" /><div class="folding-fan-ctrl">
@@ -60,6 +24,29 @@ MIT Licensed
 		</div>
 	</label>
 </div>
+<script >
 
+//
+// to solve a iphone click delay
+//
+var input = document.querySelector("input")
+	, timerId
+;
+
+document.querySelector("label").addEventListener("touchstart", function(e) {
+
+	e.preventDefault();
+
+	if(timerId) {
+		clearTimeout(timerId);
+	}
+
+	setTimeout(function() {
+		input.checked = !input.checked;
+	}, 0);
+
+}, false);
+
+</script>
 </body>
 </html>
