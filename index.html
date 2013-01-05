@@ -1,52 +1,46 @@
-<!--
-Copyright (c) 2012 https://github.com/freestrings
-
-MIT Licensed
--->
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" type="text/css" href="index.css">
-</head>
-<body>
-	<h4>Webkit only</h4>
-	
-<div class="path-fan">
-	<label>
-		<input type="checkbox" /><div class="folding-fan-ctrl">
-			<div class="folding-fan-ctrl-inner">+</div>
-			<div class="icon-wrap p-angle1"><div class="icon">-</div></div>
-			<div class="icon-wrap p-angle2"><div class="icon">-</div></div>
-			<div class="icon-wrap p-angle3"><div class="icon">-</div></div>
-			<div class="icon-wrap p-angle4"><div class="icon">-</div></div>
-			<div class="icon-wrap p-angle5"><div class="icon">-</div></div>
-		</div>
-	</label>
-</div>
-<script >
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>css3-path-menu by freestrings</title>
 
-//
-// to solve a iphone click delay
-//
-var input = document.querySelector("input")
-	, timerId
-;
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>css3-path-menu</h1>
+        <p>Path menu in pure CSS3</p>
 
-document.querySelector("label").addEventListener("touchstart", function(e) {
+        <p class="view"><a href="https://github.com/freestrings/css3-path-menu">View the Project on GitHub <small>freestrings/css3-path-menu</small></a></p>
 
-	e.preventDefault();
 
-	if(timerId) {
-		clearTimeout(timerId);
-	}
+        <ul>
+          <li><a href="https://github.com/freestrings/css3-path-menu/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/freestrings/css3-path-menu/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/freestrings/css3-path-menu">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Path menu ( pure css3 )</h1>
 
-	setTimeout(function() {
-		input.checked = !input.checked;
-	}, 0);
+<h1></h1>
 
-}, false);
-
-</script>
-</body>
+<p>It is an experiment UI - only test on safari and chrome.
+<strong>No timing functions. No javascript</strong></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/freestrings">freestrings</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
 </html>
