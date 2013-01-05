@@ -5,12 +5,13 @@ MIT Licensed
 */
 
 body {
-    font-family : arial;
+    background : whiteSmoke;
+    font-family : Arial, sans-serif;
 }
 
 .path-fan {
     position: fixed;
-    bottom : 20px;
+    bottom : 25px;
     left: 20px;
     width: 0px;
     height: 0px;

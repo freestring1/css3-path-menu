@@ -1,6 +1,6 @@
-css3-path-effects
+css3-path-menu
 =================
 
-CSS3 Path effects without javascript on webkit
+Path menu in pure css3
 
-Demo http://freestrings.github.com/css3-path-effects/
+Demo http://freestrings.github.com/css3-path-menu/
